@@ -184,12 +184,56 @@
     }
 
     /* ==========================================================================
-       Side-by-Side Hero & Hook Section
+       Hero Section: Centered Masthead
+       ========================================================================== */
+    .hero-masthead {
+      text-align: center;
+      padding-top: 4.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .release-badge-wrap {
+      margin-bottom: 1.2rem;
+    }
+
+    .release-badge {
+      font-family: var(--font-heading);
+      color: var(--gold-light);
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      padding: 0.4rem 1.25rem;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 4px;
+      background: rgba(212, 175, 55, 0.08);
+      display: inline-block;
+    }
+
+    .book-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 6.5vw, 4.4rem);
+      line-height: 1.15;
+      letter-spacing: 3px;
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+    }
+
+    .book-tagline {
+      font-family: var(--font-heading);
+      font-size: clamp(1rem, 2.3vw, 1.35rem);
+      letter-spacing: 3px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      opacity: 0.95;
+    }
+
+    /* ==========================================================================
+       Hero Section: Side-by-Side Showcase (Cover vs. Countdown & Hook)
        ========================================================================== */
     .hero-split-section {
-      padding: 4.5rem 0 3.5rem;
+      padding-bottom: 4rem;
       display: grid;
-      grid-template-columns: 400px 1fr;
+      grid-template-columns: 420px 1fr;
       gap: 3.5rem;
       align-items: center;
       position: relative;
@@ -205,7 +249,7 @@
     .cover-wrapper {
       position: relative;
       width: 100%;
-      max-width: 380px;
+      max-width: 390px;
       perspective: 1000px;
     }
 
@@ -266,56 +310,20 @@
       justify-content: center;
     }
 
-    .release-badge-wrap {
-      margin-bottom: 1rem;
-    }
-
-    .release-badge {
-      font-family: var(--font-heading);
-      color: var(--gold-light);
-      font-size: 0.82rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      padding: 0.35rem 1.1rem;
-      border: 1px solid rgba(212, 175, 55, 0.35);
-      border-radius: 4px;
-      background: rgba(212, 175, 55, 0.08);
-      display: inline-block;
-    }
-
-    .book-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.3rem, 5.5vw, 4rem);
-      line-height: 1.15;
-      letter-spacing: 2px;
-      margin-bottom: 0.4rem;
-      text-transform: uppercase;
-    }
-
-    .book-tagline {
-      font-family: var(--font-heading);
-      font-size: clamp(0.95rem, 2vw, 1.15rem);
-      letter-spacing: 2px;
-      color: var(--gold-light);
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      opacity: 0.9;
-    }
-
     /* Countdown Clock Bar */
     .countdown-container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 0.75rem;
-      max-width: 440px;
+      max-width: 480px;
       margin-bottom: 1.8rem;
     }
 
     .countdown-unit {
-      background: rgba(11, 19, 43, 0.75);
+      background: rgba(11, 19, 43, 0.8);
       border: 1px solid rgba(212, 175, 55, 0.35);
       border-radius: 4px;
-      padding: 0.6rem 0.4rem;
+      padding: 0.7rem 0.4rem;
       text-align: center;
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
@@ -337,7 +345,7 @@
       letter-spacing: 1.5px;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-top: 0.3rem;
+      margin-top: 0.35rem;
       display: block;
     }
 
@@ -795,7 +803,16 @@
   </header>
 
   <main>
-    <!-- Side-by-Side Hero & Hook Showcase -->
+    <!-- Centered Masthead: Release Badge, Title & Tagline -->
+    <section class="hero-masthead container">
+      <div class="release-badge-wrap">
+        <span class="release-badge">Official Release • December 24th</span>
+      </div>
+      <h1 class="book-title gold-gradient-text">Christianity Revealed</h1>
+      <p class="book-tagline">Can science prove the greatest story ever told?</p>
+    </section>
+
+    <!-- Side-by-Side Hero Showcase: Cover (Left) & Countdown + Hook Narrative (Right) -->
     <section class="hero-split-section container">
       <!-- Left: Book Cover -->
       <div class="hero-cover-col">
@@ -811,15 +828,8 @@
         </div>
       </div>
 
-      <!-- Right: Title, Countdown & Narrative -->
+      <!-- Right: Countdown Clock & Narrative Hook -->
       <div class="hero-content-col">
-        <div class="release-badge-wrap">
-          <span class="release-badge">Official Release • December 24th</span>
-        </div>
-        
-        <h1 class="book-title gold-gradient-text">Christianity Revealed</h1>
-        <p class="book-tagline">Can science prove the greatest story ever told?</p>
-
         <!-- Live Real-Time Countdown Timer -->
         <div class="countdown-container" id="countdownClock" aria-label="Countdown to Book Launch">
           <div class="countdown-unit">
@@ -976,7 +986,7 @@
         </div>
 
         <div class="hub-divider">
-          <span class="hub-divider-label">or reserve your copy - coming soon</span>
+          <span class="hub-divider-label">or reserve your copy</span>
         </div>
 
         <!-- Retailer Ebook Pre-Order Buttons -->
