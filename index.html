@@ -28,6 +28,7 @@
       --gold-dark: #8C6D1F;
       --text-cream: #F4F1DE;
       --text-muted: #C5BAA8;
+      --fb-blue: #1877F2;
       --font-display: 'Cinzel Decorative', Georgia, serif;
       --font-heading: 'Cinzel', Georgia, serif;
       --font-body: 'Montserrat', sans-serif;
@@ -150,34 +151,35 @@
       gap: 1rem;
     }
 
-    .audio-btn {
+    .nav-fb-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
-      background: rgba(212, 175, 55, 0.08);
-      border: 1px solid rgba(212, 175, 55, 0.45);
-      color: var(--gold-light);
-      padding: 0.6rem 1.15rem;
+      gap: 0.55rem;
+      background: rgba(24, 119, 242, 0.12);
+      border: 1px solid rgba(24, 119, 242, 0.45);
+      color: #E7F0FF;
+      padding: 0.55rem 1.15rem;
       border-radius: 999px;
       font-family: var(--font-heading);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      letter-spacing: 1.5px;
-      cursor: pointer;
+      letter-spacing: 1.2px;
+      text-decoration: none;
       text-transform: uppercase;
       transition: var(--transition-smooth);
     }
 
-    .audio-btn:hover {
-      background: rgba(212, 175, 55, 0.22);
-      border-color: var(--gold-primary);
-      box-shadow: 0 0 18px rgba(212, 175, 55, 0.35);
+    .nav-fb-link:hover {
+      background: rgba(24, 119, 242, 0.28);
+      border-color: var(--fb-blue);
+      box-shadow: 0 0 16px rgba(24, 119, 242, 0.4);
       transform: translateY(-1px);
+      color: #fff;
     }
 
-    .audio-btn svg {
-      width: 16px;
-      height: 16px;
+    .nav-fb-link svg {
+      width: 15px;
+      height: 15px;
       fill: currentColor;
     }
 
@@ -512,7 +514,7 @@
     }
 
     /* ==========================================================================
-       Pre-Order Hub & Call to Action
+       Pre-Order Hub & Facebook Community Card
        ========================================================================== */
     .hub-section {
       padding: 4rem 0 7rem;
@@ -545,58 +547,95 @@
       font-size: 0.98rem;
     }
 
-    .priority-form {
-      display: grid;
-      grid-template-columns: 1fr 1fr auto;
-      gap: 0.8rem;
+    /* Facebook Community Feature Block */
+    .fb-community-card {
+      background: rgba(11, 19, 43, 0.85);
+      border: 1px solid rgba(24, 119, 242, 0.45);
+      border-radius: 8px;
+      padding: 2.2rem 2rem;
       max-width: 680px;
       margin: 0 auto 3rem;
-    }
-
-    .input-field {
-      width: 100%;
-      background: rgba(7, 11, 25, 0.7);
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      padding: 0.95rem 1.2rem;
-      border-radius: 4px;
-      color: var(--text-cream);
-      font-family: var(--font-body);
-      font-size: 0.92rem;
-      outline: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
       transition: var(--transition-smooth);
     }
 
-    .input-field:focus {
-      border-color: var(--gold-light);
-      box-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
-      background: rgba(7, 11, 25, 0.95);
-    }
-
-    .input-field::placeholder {
-      color: rgba(244, 241, 222, 0.4);
-    }
-
-    .btn-submit {
-      background: linear-gradient(135deg, #FFF1BD 0%, var(--gold-primary) 50%, var(--gold-dark) 100%);
-      color: #070B19;
-      font-family: var(--font-heading);
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      border: none;
-      padding: 0.95rem 1.5rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.88rem;
-      transition: var(--transition-smooth);
-      white-space: nowrap;
-    }
-
-    .btn-submit:hover {
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    .fb-community-card:hover {
+      border-color: var(--fb-blue);
+      box-shadow: 0 12px 35px rgba(24, 119, 242, 0.25);
       transform: translateY(-2px);
     }
 
+    .fb-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--fb-blue);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(24, 119, 242, 0.5);
+    }
+
+    .fb-badge svg {
+      width: 28px;
+      height: 28px;
+      fill: currentColor;
+    }
+
+    .fb-heading {
+      font-family: var(--font-heading);
+      color: var(--gold-light);
+      font-size: 1.25rem;
+      letter-spacing: 1.5px;
+    }
+
+    .fb-description {
+      color: var(--text-cream);
+      font-size: 0.96rem;
+      line-height: 1.7;
+      max-width: 540px;
+      opacity: 0.92;
+    }
+
+    .btn-fb-follow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: var(--fb-blue);
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.95rem 2rem;
+      border-radius: 4px;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 18px rgba(24, 119, 242, 0.4);
+    }
+
+    .btn-fb-follow:hover {
+      background: #1565C0;
+      box-shadow: 0 6px 24px rgba(24, 119, 242, 0.65);
+      transform: translateY(-2px);
+      color: #fff;
+    }
+
+    .btn-fb-follow svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* Retailers Divider */
     .hub-divider {
       position: relative;
       height: 1px;
@@ -709,10 +748,6 @@
         grid-template-columns: 1fr;
       }
 
-      .priority-form {
-        grid-template-columns: 1fr;
-      }
-
       .retailer-btn {
         width: 100%;
       }
@@ -743,12 +778,18 @@
       <a href="#" class="brand-mark">Christianity Revealed</a>
       
       <div class="nav-actions">
-        <button id="audioToggleBtn" class="audio-btn" type="button" aria-label="Toggle Heavenly Background Music">
-          <svg id="audioIcon" viewBox="0 0 24 24" aria-hidden="true">
-            <polygon points="6 4 19 12 6 20 6 4"></polygon>
+        <a 
+          href="https://facebook.com/christianityrevealed" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="nav-fb-link" 
+          aria-label="Visit Christianity Revealed on Facebook"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
           </svg>
-          <span id="audioStatusText">Play Heavenly Audio</span>
-        </button>
+          Facebook Page
+        </a>
       </div>
     </div>
   </header>
@@ -902,45 +943,40 @@
       </div>
     </section>
 
-    <!-- Pre-Order Hub & Call to Action -->
+    <!-- Pre-Order Hub & Facebook Community Section -->
     <section class="hub-section container" id="preorder-hub">
       <div class="hub-card">
-        <h2 class="hub-title gold-gradient-text">Join the Sacred Unveiling</h2>
+        <h2 class="hub-title gold-gradient-text">Join the Journey</h2>
         <p class="hub-lead">
-          Be among the first to experience the revelation. Join the priority launch circle for exclusive previews and priority release access on December 24th.
+          Follow the official community for manuscript previews, historical evidence deep dives, and live release updates leading up to December 24th.
         </p>
 
-        <!-- Subscription Form -->
-        <form 
-          action="#" 
-          method="POST" 
-          class="priority-form" 
-          id="launchListForm"
-          onsubmit="handleSubscription(event)"
-        >
-          <input 
-            type="text" 
-            name="name" 
-            class="input-field" 
-            placeholder="Your Full Name" 
-            required 
-            aria-label="Full Name"
-          />
-          <input 
-            type="email" 
-            name="email" 
-            class="input-field" 
-            placeholder="Your Email Address" 
-            required 
-            aria-label="Email Address"
-          />
-          <button type="submit" class="btn-submit">
-            Join Priority List
-          </button>
-        </form>
+        <!-- Facebook Community Card -->
+        <div class="fb-community-card">
+          <div class="fb-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </div>
+          <h3 class="fb-heading">Official Facebook Community</h3>
+          <p class="fb-description">
+            Connect with author Josh Vande Wettering, join discussions on ancient scripture and archaeological finds, and receive exclusive launch announcements.
+          </p>
+          <a 
+            href="https://facebook.com/christianityrevealed" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn-fb-follow"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            Follow on Facebook
+          </a>
+        </div>
 
         <div class="hub-divider">
-          <span class="hub-divider-label">or reserve your copy</span>
+          <span class="hub-divider-label">or reserve your copy - coming soon</span>
         </div>
 
         <!-- Retailer Ebook Pre-Order Buttons -->
@@ -969,11 +1005,6 @@
     </div>
   </footer>
 
-  <!-- Background Audio (Loops sacred cathedral polyphony) -->
-  <audio id="heavenlyAudio" loop preload="none">
-    <source src="829151__numerocuatro__angelic-heaven-atmosphere.wav" type="audio/ogg" />
-  </audio>
-
   <!-- ==========================================================================
        Client-Side JavaScript
        ========================================================================== -->
@@ -999,11 +1030,14 @@
       const distance = launchTarget - now;
 
       if (distance <= 0) {
-        document.getElementById('countdownClock').innerHTML = `
-          <div style="grid-column: 1 / -1; font-family: var(--font-heading); color: var(--gold-light); font-size: 1.15rem; letter-spacing: 2px;">
-            The Revelation Has Begun • Now Available
-          </div>
-        `;
+        const clockEl = document.getElementById('countdownClock');
+        if (clockEl) {
+          clockEl.innerHTML = `
+            <div style="grid-column: 1 / -1; font-family: var(--font-heading); color: var(--gold-light); font-size: 1.15rem; letter-spacing: 2px;">
+              The Revelation Has Begun • Now Available
+            </div>
+          `;
+        }
         return;
       }
 
@@ -1020,81 +1054,6 @@
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
-
-    // ==========================================
-    // Audio Player Controls & Web Audio Handler
-    // ==========================================
-    const audioElement = document.getElementById('heavenlyAudio');
-    const audioToggleBtn = document.getElementById('audioToggleBtn');
-    const audioStatusText = document.getElementById('audioStatusText');
-    const audioIcon = document.getElementById('audioIcon');
-
-    const PLAY_SVG = '<polygon points="6 4 19 12 6 20 6 4"></polygon>';
-    const PAUSE_SVG = '<rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect>';
-
-    let isAudioPlaying = false;
-
-    function fadeAudio(audio, targetVolume, duration = 800) {
-      const startVolume = audio.volume;
-      const step = (targetVolume - startVolume) / (duration / 50);
-      
-      const fadeInterval = setInterval(() => {
-        let nextVolume = audio.volume + step;
-        if ((step > 0 && nextVolume >= targetVolume) || (step < 0 && nextVolume <= targetVolume)) {
-          audio.volume = targetVolume;
-          clearInterval(fadeInterval);
-          if (targetVolume === 0) audio.pause();
-        } else {
-          audio.volume = Math.max(0, Math.min(1, nextVolume));
-        }
-      }, 50);
-    }
-
-    audioToggleBtn.addEventListener('click', async () => {
-      try {
-        if (!isAudioPlaying) {
-          audioElement.volume = 0;
-          await audioElement.play();
-          fadeAudio(audioElement, 0.75, 1000);
-          isAudioPlaying = true;
-          audioStatusText.textContent = "Pause Heavenly Audio";
-          audioIcon.innerHTML = PAUSE_SVG;
-          audioToggleBtn.style.borderColor = "var(--gold-primary)";
-          audioToggleBtn.style.background = "rgba(212, 175, 55, 0.25)";
-        } else {
-          fadeAudio(audioElement, 0, 700);
-          isAudioPlaying = false;
-          audioStatusText.textContent = "Play Heavenly Audio";
-          audioIcon.innerHTML = PLAY_SVG;
-          audioToggleBtn.style.borderColor = "rgba(212, 175, 55, 0.45)";
-          audioToggleBtn.style.background = "rgba(212, 175, 55, 0.08)";
-        }
-      } catch (err) {
-        console.warn("Audio playback interrupted or permission restricted:", err);
-      }
-    });
-
-    // ==========================================
-    // Priority Launch Subscription Handler
-    // ==========================================
-    function handleSubscription(event) {
-      event.preventDefault();
-      const form = event.target;
-      const submitBtn = form.querySelector('.btn-submit');
-      
-      submitBtn.textContent = "Welcome to the Circle";
-      submitBtn.style.background = "#2D6A4F";
-      submitBtn.style.color = "#FFFFFF";
-      submitBtn.disabled = true;
-
-      setTimeout(() => {
-        form.reset();
-        submitBtn.textContent = "Join Priority List";
-        submitBtn.style.background = "";
-        submitBtn.style.color = "";
-        submitBtn.disabled = false;
-      }, 4000);
-    }
   </script>
 </body>
 </html>
